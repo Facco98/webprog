@@ -18,7 +18,9 @@
   * #### Dal sito ufficiale
     * Puoi installare git seguendo le istruzioni riportate
      [qui](https://git-scm.com/book/it/v1/Per-Iniziare-Installare-Git)
+     
   * #### Usando il file su questa repository ( solo per sistemi Unix-like )
+  
     * Via wget
     ```shell
     wget -o ./install.sh https://raw.githubusercontent.com/Facco98/webprog/master/lab1-git/install.sh
