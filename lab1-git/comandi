@@ -1,0 +1,8 @@
+git init : Inizializza la cartella come una repository git. Viene creata la cartella .git dove c'è il database.
+git clone <url> : Scarico un progetto da una repository remota. Viene creata anche la cartella .git pronta.
+git add file file1 <altri file> : Aggiunge i file alla staging area
+git commit -m "Descrizione" : Aggiunge un commit alla repository, registra le modifiche con il messaggio "Descrizione"
+git branch testing : Crea un branch chiamato "testing" dal punto in cui sono
+git checkout testing : Sposta HEAD sul branch testing
+git checkout -b testing : Creo il branch testing e mi sposto su di esso
+git merge testing : Prendi le modifiche di testing e portale nel branch attuale
