@@ -6,3 +6,6 @@ I progetti/esercitazioni sono state sviluppando usando:
   * IDE: IntelliJ IDEA
   * DBMS: PostgreSQL
   * Web Server: Tomcat
+  
+### Lezioni di laboratorio
+  * #### [Lezione 1]: https://Facco98.github.io/webprog/lab01
