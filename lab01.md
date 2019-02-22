@@ -1,12 +1,17 @@
 ## Prima lezione di laboratorio: Git
 
+### Cosa contiene
+  * Appunti.pdf: Gli appunti presi a lezione
+  * comandi: Lista dei comandi mostrati a lezione con spiegazione
+  * install.sh: File bash per installare git ( vedi sotto )
+
 ### Cose da fare
   1. Installare git
   2. Registrarsi su [GitLab](https://gitlab.com/users/sign_in#register-pane)
-  3. Provare a usare git:
-    * Creare una repo su gitlab
-    * Clonare la repo
-    * Fare alcuni commit
+  3. Provare a usare git:  
+     * Clonare la repo
+     * Provare a committare
+     * Provare a creare branch
   
 ### Installa git
 
