@@ -11,7 +11,7 @@
 ### Installa git
 
   * #### Dal sito ufficiale
-    *Puoi installare git seguendo le istruzioni riportate
+    * Puoi installare git seguendo le istruzioni riportate
      [qui](https://git-scm.com/book/it/v1/Per-Iniziare-Installare-Git)
   * #### Usando il file su questa repository ( solo per sistemi Unix-like )
     * Via wget
