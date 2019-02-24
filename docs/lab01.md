@@ -42,7 +42,7 @@
 Dopo aver installato git, prova ad utilizzarlo.
 
   * ##### Inizializza una nuova repository locale
-  	```shell
+    ```shell
     git init
     ```
     Il comando mostrato sopra serve a inizializzare una nuova repository git nella cartella in cui siamo attualmente.  
@@ -122,25 +122,26 @@ Dopo aver installato git, prova ad utilizzarlo.
   
     * Versione Swift
     
-      ```swift
-      let name = "Claudio"
-      Swift.print("Hello, \(name)")
-      ````
-	* Versione C++
-
-	  ```cpp
-      #include <iostream>
-
-	  using namespace std;
-
-      int main(){
-		
-        char* name = "Claudio"
-   		cout << "Hello, " << name << endl;
-   		return 0;
-	  }
-      ```
-   Committiamo quindi le modifiche
+     ```swift
+     let name = "Claudio"
+     Swift.print("Hello, \(name)")
+     ````
+    * Versione C++
+    
+    ```cpp
+    #include <iostream>
+    
+    using namespace std;
+    
+    int main(){
+        char* name = "Claudio";  
+        cout << "Hello, " << name << endl;  
+        return 0;  
+	
+    }
+    ```
+    
+  Committiamo quindi le modifiche
   ```shell
   git commit -a -m "Aggiunta la variabile"
   ````
@@ -207,7 +208,7 @@ Dopo aver installato git, prova ad utilizzarlo.
     ```
     
     dove branch è il nome del ramo su cui stiamo lavorando.  
-Ulteriori informazioni e comandi git possono essere trovati [sul sito ufficiale] (https://git-scm.com/doc).  
+Ulteriori informazioni e comandi git possono essere trovati [sul sito ufficiale](https://git-scm.com/doc).  
 Per approfondire la conoscienza del funzionamento dei branch git potete dare un'occhiata a [questo](https://learngitbranching.js.org/) sito, dove sono presenti anche esercizi per famigliarizzare con git.
     
 ### Attenz.
