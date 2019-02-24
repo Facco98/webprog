@@ -11,6 +11,7 @@ I progetti/esercitazioni sono state sviluppando usando:
   * #### [Lezione 1](https://Facco98.github.io/webprog/lab01)
 
 ### Scarica i file di un'esercitazione specifica
+Richiede che git sia installato.
 
 ```shell
 svn export https://github.com/Facco98/webprog/trunk/{nome_esercitazione}
