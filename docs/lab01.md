@@ -66,7 +66,7 @@ Dopo aver installato git, prova ad utilizzarlo.
      	cout << "Hello World" << endl;
      	return 0;
      }
-     ````
+     ```
    * ##### "Committa" le tue modifiche
      Significa semplicemente dire a git che vuoi che ricordi la particolare versione dei file, o del singolo file nel nostro caso
      
@@ -81,13 +81,13 @@ Dopo aver installato git, prova ad utilizzarlo.
        
        ```shell
        git commit -m "Aggiunto il file main.swift"
-       ````
+       ```
 	   
-       Una scorciatoia molto utile è usare l'opzione ```-a```, in modo che tutti i file che sono stati modificati vengano aggiunti alla staging area direttamente, senza bisogno di usare il comando ```git add````.
+       Una scorciatoia molto utile è usare l'opzione ```-a```, in modo che tutti i file che sono stati modificati vengano aggiunti alla staging area direttamente, senza bisogno di usare il comando ```git add```.
 
 	   ```shell
        git commit -a -m "Aggiunto il file main"
-       ````
+       ```
 	   è equivalente a
        
        ```shell
@@ -101,21 +101,21 @@ Dopo aver installato git, prova ad utilizzarlo.
   
   ```shell
   git branch fun1
-  ````
+  ```
 
   Ora però se modifichiamo qualcosa questi cambiamenti avverranno sul branch master, per spostarci dobbiamo utilizzare il comando ```git checkout```, seguito dal nome del branch su cui vogliamo spostarci
   
   ```shell
   git checkout fun1
-  ````
+  ```
 
   Una scorciatoia molto utile consiste nel comando ```git checkout -b```, che crea automaticamente il branch e ci sposta su di esso.
   
   ```shell
   git checkout -b fun1
-  ````
+  ```
 
-  Quando dico "ci sposta", quello che accade e che viene spostato il puntatore HEAD della nostra repository in un particolare punto. Il puntatore HEAD è quel particolare puntatore che ci dice su quale commit specifico su quale ramo stiamo operando.  
+  Quando dico "ci sposta", quello che accade è che viene spostato il puntatore HEAD della nostra repository in un particolare punto. Il puntatore HEAD è quel particolare puntatore che ci dice su quale commit specifico su quale ramo stiamo operando.  
   Ogni commit è identificato da un codice hash univoco, mentre il ramo è identificato dal proprio nome all'interno della repository.
   
   Il procedimento per effettuare delle modifiche al nostro nuovo ramo è identico a prima, quindi modifichiamo il file main e committiamo i cambiamenti.
@@ -125,7 +125,7 @@ Dopo aver installato git, prova ad utilizzarlo.
      ```swift
      let name = "Claudio"
      Swift.print("Hello, \(name)")
-     ````
+     ```
     * Versione C++
     
     ```cpp
@@ -144,7 +144,7 @@ Dopo aver installato git, prova ad utilizzarlo.
   Committiamo quindi le modifiche
   ```shell
   git commit -a -m "Aggiunta la variabile"
-  ````
+  ```
   
   Ora che abbiamo finito di sviluppare la nostra ipotetica nuova funzionalità possiamo far confluire i due rami, ovvero fare i merge dei due; per fare questo usiamo il comando ```git merge```, che prende le modifiche di un ramo e le porta in quello attuale.  
   Dobbiamo quindi prima spostarci sul branch master e poi fare il merge.
@@ -158,7 +158,7 @@ Dopo aver installato git, prova ad utilizzarlo.
   
   ```shell
   git branch -d fun1
-  ````
+  ```
   
 * ### Git Remote
   Vai su GitLab e crea una nuova repository; questa è una repository remota.
@@ -196,7 +196,7 @@ Dopo aver installato git, prova ad utilizzarlo.
     
     # Configura il vostro indirizzo email
     git config --global user.email "devack@hotmail.it"
-    ````
+    ```
 	
     E' molto importante che la mail sia la stessa che avete usato per la registrazione al servizio di hosting di repository remote ( GitLab ) nel nostro caso, perchè sarà quella con cui cercerà di autenticarsi quando scaricherete/invierete le modifiche. Se la lasciate vuota allora vi chiederà ogni volta username ( mail ) e password.
     
@@ -209,7 +209,7 @@ Dopo aver installato git, prova ad utilizzarlo.
     
     dove branch è il nome del ramo su cui stiamo lavorando.  
 Ulteriori informazioni e comandi git possono essere trovati [sul sito ufficiale](https://git-scm.com/doc).  
-Per approfondire la conoscienza del funzionamento dei branch git potete dare un'occhiata a [questo](https://learngitbranching.js.org/) sito, dove sono presenti anche esercizi per famigliarizzare con git.
+Per approfondire la conoscienza del funzionamento dei branch git potete dare un'occhiata a [questo](https://learngitbranching.js.org/) sito, dove sono presenti anche esercizi per familiarizzare con git.
     
 ### Attenz.
 Questo è solo un riassunto per entrare velocemente nel mondo git in base a quanto spiegato a lezione e non intende sostituirsi in alcun modo al materiale o al manuale ufficiale git.
