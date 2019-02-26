@@ -64,8 +64,6 @@ In questo corso viene utilizzato Tomcat, quindi verrà mostrato il processo di i
  
  Per tutti gli altri web server si rimanda alle istruzioni sui siti ufficiali.
 
-###
-
 ### Installare un IDE
 I tre maggiori IDE per Java sono:
   * [NetBeans](https://netbeans.org/) - Free
