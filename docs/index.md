@@ -8,7 +8,8 @@ I progetti/esercitazioni sono state sviluppando usando:
   * Web Server: Tomcat
   
 ### Lezioni di laboratorio
-  * #### [Lezione 1](https://Facco98.github.io/webprog/lab01)
+  * #### [Lezione 1](https://Facco98.github.io/webprog/lab01) - Git
+  * #### [Tools](https://Facco98.github.io/webprog/tools)
 
 ### Scarica i file di un'esercitazione specifica
 Richiede che git sia installato.
