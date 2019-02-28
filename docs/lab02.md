@@ -69,7 +69,7 @@ Per creare una socket è sufficiente utilizzare uno dei suoi costruttori; i piu 
     Socket toGoogleSocket = new Socket(google,8080);
     ```
   * ```java
-   	Socket toGoogleSocket = new Socket("google.com", 8080);
+    Socket toGoogleSocket = new Socket("google.com", 8080);
     ```
 
 ##### I/O su Socket
