@@ -21,6 +21,26 @@ In questo caso verrà mostrato come installare [OpenJDK](https://openjdk.java.ne
      In particolare per i sistemi Debian-based ( ad esempio Ubuntu ) basta digitare  
      `sudo apt install default-jdk`
      
+     ###### Attenz
+     Nel caso in cui si stia utilizzando Ubuntu 18.04.xx o precedenti se si tenta di installare OpenJDK con il comando mostrato sopra si avrà errore, in quanto nella repository è presente il pacchetto denominato openjdk-11 ma contiene di fatot la versione 10.  
+     Per installare OpenJDK 11 su queste versioni sarà necessario farlo manualmente. Per farlo basterà copiare-incollare i comandi qui riportati.
+     
+     ```shell
+     wget https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_linux-x64_bin.tar.gz -O /tmp/openjdk-11.0.2.tar.gz
+     sudo tar xfvz /tmp/openjdk-11.0.2.tar.gz --directory /usr/lib/jvm
+     rm -f /tmp/openjdk-11.0.2.tar.gz
+     
+     sudo sh -c 'for bin in /usr/lib/jvm/jdk-11.0.2/bin/*; do update-alternatives --install /usr/bin/$(basename $bin) $(basename $bin) $bin 100; done'
+     sudo sh -c 'for bin in /usr/lib/jvm/jdk-11.0.2/bin/*; do update-alternatives --set $(basename $bin) $bin; done'
+     ```
+     
+     Nel momento in cui OpenJDK 11 comparirà sulla repo ufficiale di Ubuntu 18.04 o precedenti, basterà upgradare il default-jdk e cambiare la versione con `upgrade-alternatives`, scegliendo tra le opzioni in lista la versione corretta del JDK.
+     
+     ```shell
+     sudo apt install --only-upgrade default-jdk
+     update-alternatives --config java
+     ```
+     
      Per altre distribuzioni Linux si rimanda alle varie repository e relativi gestori di pacchetti.
 
 ### Installare un web server
