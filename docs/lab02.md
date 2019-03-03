@@ -159,8 +159,8 @@ Una versione completa dell'esempio può essere trovata su questa repository nell
 #### Esercizi assegnati
   1. Creare un applicativo che stampi a video il nome della macchina su cui è in esecuzione
   2. Creare un applicativo che esegua l'NSLookup di un indirizzo, ovvero dato un nome ritorni tutti gli indirizzi IP assegnati su DNS.
-  3. Creare un server HTTP che risponda alle richieste GET e ritorni il file richiesto **-X**
-  4. Migliorare il server HTTP in modo che possa: **-X**
+  3. Creare un server HTTP che risponda alle richieste GET e ritorni il file richiesto
+  4. Migliorare il server HTTP in modo che possa:
      1. Gestire anche la richiesta di cartelle mostrando tutti i file contenuti in esse.
      2. Ritornare solo i file a cui si ha veramente accesso, ovvero solo quelli relativi alle sottocartelle del percorso di esecuzione del server
      3. Ottimizzare la memoria usata dal server evitando di salvare tutti il file in memoria prima di mandarlo al client.
