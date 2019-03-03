@@ -98,11 +98,17 @@ public class TinyHttpConnectionThread implements Runnable{
 
     private static boolean checkPermission(File file){
 
-        var currentPath = Paths.get("./");
+        var currentPath = Paths.get("");
         System.out.println(currentPath);
-        var filePath = Paths.get(file.toURI());
-        System.out.println(filePath);
-        return filePath.toAbsolutePath().startsWith(currentPath.toAbsolutePath());
+        try {
+            var filePath = Paths.get(file.getCanonicalPath());
+            System.out.println(filePath);
+            return filePath.toAbsolutePath().startsWith(currentPath.toAbsolutePath());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return false;
+
 
 
     }
