@@ -407,7 +407,7 @@ const claudio = new Persona("Claudio", "Facchinetti", "11/01/98")
 console.log(claudio["saluta"]())
 ```
 
-avrà lo stesso effetto del codice scritto sopra.
+avrà lo stesso effetto del codice scritto sopra.  
 Allo stesso modo è possibile anche aggiungere delle proprietà alle classi a runtime, anche se non è consigliabile farlo.
 
 #### Interagire con la pagina HTML
