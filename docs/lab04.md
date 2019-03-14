@@ -1,5 +1,5 @@
 ## Quarta lezione di laboratorio: Java Servlet e Form
-Per gli argomenti trattati è necessario installare TomCat o un qualsiasi Web Server; per questo si rimanda alla pagina dei [tools](https://facco98.github.com/webprog/tools).
+Per gli argomenti trattati è necessario installare TomCat o un qualsiasi Web Server; per questo si rimanda alla pagina dei [tools](https://facco98.github.io/webprog/tools).
 
 A seconda del vostro IDE e sistema operativo sarà necessario configurare diversamente il percorso di TomCat in modo da poter effettivamente lanciare i vostri esercizi/progetti.  
 
