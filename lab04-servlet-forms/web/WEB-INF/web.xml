@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+    <servlet>
+        <servlet-name>Exercise1</servlet-name>
+        <servlet-class>ex1.Exercise1</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Exercise2</servlet-name>
+        <servlet-class>ex2.Exercise2</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Exercise3</servlet-name>
+        <servlet-class>ex3.Exercise3</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Exercise1</servlet-name>
+        <url-pattern>/ex1/compute</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Exercise2</servlet-name>
+        <url-pattern>/ex2/compute</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Exercise3</servlet-name>
+        <url-pattern>/ex3/compute</url-pattern>
+    </servlet-mapping>
+</web-app>
