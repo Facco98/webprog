@@ -215,42 +215,42 @@ Le Java Standard Tag Libraries si dividono, principalmente in cinque pacchetti:
         In questo caso l'output sarà `a!=b`, in quanto il primo test fallirà.
 
   * __<c:forEach var="i" items="collection">__  
-        Consente di eseguire il contenuto dei tag per ogni elemento contenuto nella variabile `collecion`, accedendo ogni volta all'elemento corrente tramite la vriabile `i`.
+    Consente di eseguire il contenuto dei tag per ogni elemento contenuto nella variabile `collecion`, accedendo ogni volta all'elemento corrente tramite la vriabile `i`.
 
-        ```jsp
-        <%! String[] nomi = new String[]{"Claudio", "Francesco"}; %>
-        <:forEach var="i" items="nomi">
-          <p>Hello, <c:out value="${i}" /> </p>
-        </c:forEach>
-        ```
-        Il risultato di quanto mostrato soprà sarà  
-        ```
-        Hello, Claudio
-        Hello, Francesco
-        ```
+    ```jsp
+    <%! String[] nomi = new String[]{"Claudio", "Francesco"}; %>
+    <:forEach var="i" items="nomi">
+      <p>Hello, <c:out value="${i}" /> </p>
+    </c:forEach>
+    ```
+    Il risultato di quanto mostrato soprà sarà  
+    ```
+    Hello, Claudio
+    Hello, Francesco
+    ```
 
-        Esiste inoltre la variante con un intervallo __<c:forEach var="i" begin="1" end="10" step="1">__.
+    Esiste inoltre la variante con un intervallo __<c:forEach var="i" begin="1" end="10" step="1">__.
 
   * __<c:forTokens items="${string}" delims="${del}" var="i">__  
-        Consente di dividere la stringa `string` ogni volta che si incontra la stringa `del`, salvare questa sottostringa nella variabile `i` e eseguire ciò che è contenuto tra i tag di apertura e chiusura.
+    Consente di dividere la stringa `string` ogni volta che si incontra la stringa `del`, salvare questa sottostringa nella variabile `i` e eseguire ciò che è contenuto tra i tag di apertura e chiusura.
 
-        E' possibile inoltre specificare un indice da cui partire e uno a cui fermarsi tramite i parametri `begin` e `end`.
+    E' possibile inoltre specificare un indice da cui partire e uno a cui fermarsi tramite i parametri `begin` e `end`.
 
-        ```jsp
-        <c:forTokens items="a,b,c,d,e,f" delims="," var="letter">
-            <p><c:cout value="${letter}" /></p>
-        </c:forTokens>
-        ```
+    ```jsp
+    <c:forTokens items="a,b,c,d,e,f" delims="," var="letter">
+        <p><c:cout value="${letter}" /></p>
+    </c:forTokens>
+    ```
 
-        Il risultato dell'esempio sarà
-        ```
-        a
-        b
-        c
-        d
-        e
-        f
-        ```
+    Il risultato dell'esempio sarà
+    ```
+    a
+    b
+    c
+    d
+    e
+    f
+    ```
 
 
  2. ##### XML library
