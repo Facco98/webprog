@@ -195,7 +195,6 @@ Le Java Standard Tag Libraries si dividono, principalmente in cinque pacchetti:
       </c:if>
       <p>Esito: <c:out value="${esito}" /></p>
       ```
-
     Nel caso mostrato il paragrafo che saluta non viene mostrato, in quanto ${a==b} viene valutato a false.  
     Viene inoltre mostrato `Esito: false` alla fine della pagina.
 
@@ -224,34 +223,31 @@ Le Java Standard Tag Libraries si dividono, principalmente in cinque pacchetti:
         <p>Hello, <c:out value="${i}" /> </p>
       </c:forEach>
       ```
-    Il risultato di quanto mostrato soprà sarà  
+      Il risultato di quanto mostrato soprà sarà  
       ```
       Hello, Claudio
       Hello, Francesco
       ```
-
-    Esiste inoltre la variante con un intervallo __&lt;c:forEach var="i" begin="1" end="10" step="1"&gt;__.
+      Esiste inoltre la variante con un intervallo __&lt;c:forEach var="i" begin="1" end="10" step="1"&gt;__.
 
     * __&lt;c:forTokens items="${string}" delims="${del}" var="i"&gt;__  
     Consente di dividere la stringa `string` ogni volta che si incontra la stringa `del`, salvare questa sottostringa nella variabile `i` e eseguire ciò che è contenuto tra i tag di apertura e chiusura.
+      E' possibile inoltre specificare un indice da cui partire e uno a cui fermarsi tramite i parametri `begin` e `end`.
 
-    E' possibile inoltre specificare un indice da cui partire e uno a cui fermarsi tramite i parametri `begin` e `end`.
-
-      ```jsp
-      <c:forTokens items="a,b,c,d,e,f" delims="," var="letter">
-          <p><c:cout value="${letter}" /></p>
-      </c:forTokens>
-      ```
-
-    Il risultato dell'esempio sarà
-      ```
-      a
-      b
-      c
-      d
-      e
-      f
-      ```
+        ```jsp
+        <c:forTokens items="a,b,c,d,e,f" delims="," var="letter">
+            <p><c:cout value="${letter}" /></p>
+        </c:forTokens>
+        ```
+      Il risultato dell'esempio sarà
+        ```
+        a
+        b
+        c
+        d
+        e
+        f
+        ```
 
 
  2. ##### XML library
