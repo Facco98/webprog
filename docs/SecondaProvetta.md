@@ -167,52 +167,52 @@ Le Java Standard Tag Libraries si dividono, principalmente in cinque pacchetti:
 
     ###### Tag principali
   * __<c:out value="val" />__  
-        Viene sostituito con il valore dell'espressione contenuta nel parametro __val__.
+    Viene sostituito con il valore dell'espressione contenuta nel parametro __val__.
 
-        ```jsp
-        <%! String nome = "Claudio" %>
-        <p>Ciao, <c:out value="${nome}" /></p>
-        ```
+    ```jsp
+    <%! String nome = "Claudio" %>
+    <p>Ciao, <c:out value="${nome}" /></p>
+    ```
   * __<c:set value="val" var="v" scope="page"/>__  
-        Non produce output; ha l'effetto di creare una variabile chiamata **v** con valore __val__ con scoping __page__.
+    Non produce output; ha l'effetto di creare una variabile chiamata **v** con valore __val__ con scoping __page__.
 
-        ```jsp
-        <c:set value="Claudio" var="nome" scope="page" />
-        <p>Ciao, <c:out value="${nome}" /></p>
-        ```
+    ```jsp
+    <c:set value="Claudio" var="nome" scope="page" />
+    <p>Ciao, <c:out value="${nome}" /></p>
+    ```
 
   * __<c:if test="${a == b}">__  
-        Il contenuto tra il tag **<c:if>** il corrispettivo tag di chiusura **</c:if>** viene valutato ( e eventualmente mostrato ) solo se il test ha avuto esito positivo.
-        E' possibile passare un altro argomento chiamato **var**; nel caso presente l'esito del confronto viene salvato in una variabile chiamata come il valore del parametro var e con scoping corrispondente a quello specificato con il parametro **scope**.
+    Il contenuto tra il tag **<c:if>** il corrispettivo tag di chiusura **</c:if>** viene valutato ( e eventualmente mostrato ) solo se il test ha avuto esito positivo.
+    E' possibile passare un altro argomento chiamato **var**; nel caso presente l'esito del confronto viene salvato in una variabile chiamata come il valore del parametro var e con scoping corrispondente a quello specificato con il parametro **scope**.
 
-        ```jsp
-        <c:set value="5" var="a" scope="page" />
-        <c:set value="6" var="b" scope="page" />
-        <c:if test="${a==b}" var="esito" scope="page">
-          <c:set value="Claudio" var="nome" scope="page" />
-          <p>Ciao, <c:out value="${nome}" /></p>
-        </c:if>
-        <p>Esito: <c:out value="${esito}" /></p>
-        ```
+    ```jsp
+    <c:set value="5" var="a" scope="page" />
+    <c:set value="6" var="b" scope="page" />
+    <c:if test="${a==b}" var="esito" scope="page">
+      <c:set value="Claudio" var="nome" scope="page" />
+      <p>Ciao, <c:out value="${nome}" /></p>
+    </c:if>
+    <p>Esito: <c:out value="${esito}" /></p>
+    ```
 
-        Nel caso mostrato il paragrafo che saluta non viene mostrato, in quanto ${a==b} viene valutato a false.  
-        Viene inoltre mostrato `Esito: false` alla fine della pagina.
+    Nel caso mostrato il paragrafo che saluta non viene mostrato, in quanto ${a==b} viene valutato a false.  
+    Viene inoltre mostrato `Esito: false` alla fine della pagina.
 
   * __<c:choose>__  
-        E' un tag che identifica un blocco in cui ci sono condizioni mutualmente esclusive identificate dai tag
-    1. **<c:when test="${a==b}">**, mostrato solo se il test ha esito positivo.
-    2. **<c:otherwhise>**, mostrato solo se nessuna delle altre clausole ha avuto successo.
+    E' un tag che identifica un blocco in cui ci sono condizioni mutualmente esclusive identificate dai tag
+      1. **<c:when test="${a==b}">**, mostrato solo se il test ha esito positivo.
+      2. **<c:otherwhise>**, mostrato solo se nessuna delle altre clausole ha avuto successo.
 
 
-        ```jsp
-        <c:set value="5" var="a" scope="page" />
-        <c:set value="6" var="b" scope="page" />
-        <c:choose>
-          <c:when test="${a==b}"> <p>a==b</p> </c:when>
-          <c:otherwhise> <p> a!=b </p></c:otherwhise>
-        </c:choose>
-        ```
-        In questo caso l'output sarà `a!=b`, in quanto il primo test fallirà.
+    ```jsp
+    <c:set value="5" var="a" scope="page" />
+    <c:set value="6" var="b" scope="page" />
+    <c:choose>
+      <c:when test="${a==b}"> <p>a==b</p> </c:when>
+      <c:otherwhise> <p> a!=b </p></c:otherwhise>
+    </c:choose>
+    ```
+    In questo caso l'output sarà `a!=b`, in quanto il primo test fallirà.
 
   * __<c:forEach var="i" items="collection">__  
     Consente di eseguire il contenuto dei tag per ogni elemento contenuto nella variabile `collecion`, accedendo ogni volta all'elemento corrente tramite la vriabile `i`.
