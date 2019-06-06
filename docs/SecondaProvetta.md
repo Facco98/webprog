@@ -170,31 +170,31 @@ Le Java Standard Tag Libraries si dividono, principalmente in cinque pacchetti:
     * __&lt;c:out value="val" /&gt;__  
     Viene sostituito con il valore dell'espressione contenuta nel parametro __val__.
 
-    ```jsp
-    <%! String nome = "Claudio" %>
-    <p>Ciao, <c:out value="${nome}" /></p>
-    ```
+      ```jsp
+      <%! String nome = "Claudio" %>
+      <p>Ciao, <c:out value="${nome}" /></p>
+      ```
     * __&lt;c:set value="val" var="v" scope="page"/&gt;__  
     Non produce output; ha l'effetto di creare una variabile chiamata **v** con valore __val__ con scoping __page__.
 
-    ```jsp
-    <c:set value="Claudio" var="nome" scope="page" />
-    <p>Ciao, <c:out value="${nome}" /></p>
-    ```
+      ```jsp
+      <c:set value="Claudio" var="nome" scope="page" />
+      <p>Ciao, <c:out value="${nome}" /></p>
+      ```
 
     * __&lt;c:if test="${a == b}"&gt;__  
     Il contenuto tra il tag **&lt;c:if&gt;** il corrispettivo tag di chiusura **&lt;/c:if&gt;** viene valutato ( e eventualmente mostrato ) solo se il test ha avuto esito positivo.
     E' possibile passare un altro argomento chiamato **var**; nel caso presente l'esito del confronto viene salvato in una variabile chiamata come il valore del parametro var e con scoping corrispondente a quello specificato con il parametro **scope**.
 
-    ```jsp
-    <c:set value="5" var="a" scope="page" />
-    <c:set value="6" var="b" scope="page" />
-    <c:if test="${a==b}" var="esito" scope="page">
-      <c:set value="Claudio" var="nome" scope="page" />
-      <p>Ciao, <c:out value="${nome}" /></p>
-    </c:if>
-    <p>Esito: <c:out value="${esito}" /></p>
-    ```
+      ```jsp
+      <c:set value="5" var="a" scope="page" />
+      <c:set value="6" var="b" scope="page" />
+      <c:if test="${a==b}" var="esito" scope="page">
+        <c:set value="Claudio" var="nome" scope="page" />
+        <p>Ciao, <c:out value="${nome}" /></p>
+      </c:if>
+      <p>Esito: <c:out value="${esito}" /></p>
+      ```
 
     Nel caso mostrato il paragrafo che saluta non viene mostrato, in quanto ${a==b} viene valutato a false.  
     Viene inoltre mostrato `Esito: false` alla fine della pagina.
@@ -205,30 +205,30 @@ Le Java Standard Tag Libraries si dividono, principalmente in cinque pacchetti:
       2. **&lt;c:otherwhise&gt;**, mostrato solo se nessuna delle altre clausole ha avuto successo.
 
 
-    ```jsp
-    <c:set value="5" var="a" scope="page" />
-    <c:set value="6" var="b" scope="page" />
-    <c:choose>
-      <c:when test="${a==b}"> <p>a==b</p> </c:when>
-      <c:otherwhise> <p> a!=b </p></c:otherwhise>
-    </c:choose>
-    ```
+      ```jsp
+      <c:set value="5" var="a" scope="page" />
+      <c:set value="6" var="b" scope="page" />
+      <c:choose>
+        <c:when test="${a==b}"> <p>a==b</p> </c:when>
+        <c:otherwhise> <p> a!=b </p></c:otherwhise>
+      </c:choose>
+      ```
     In questo caso l'output sarà `a!=b`, in quanto il primo test fallirà.
 
     * __&lt;c:forEach var="i" items="collection"&gt;__  
     Consente di eseguire il contenuto dei tag per ogni elemento contenuto nella variabile `collecion`, accedendo ogni volta all'elemento corrente tramite la vriabile `i`.
 
-    ```jsp
-    <%! String[] nomi = new String[]{"Claudio", "Francesco"}; %>
-    <:forEach var="i" items="nomi">
-      <p>Hello, <c:out value="${i}" /> </p>
-    </c:forEach>
-    ```
+      ```jsp
+      <%! String[] nomi = new String[]{"Claudio", "Francesco"}; %>
+      <:forEach var="i" items="nomi">
+        <p>Hello, <c:out value="${i}" /> </p>
+      </c:forEach>
+      ```
     Il risultato di quanto mostrato soprà sarà  
-    ```
-    Hello, Claudio
-    Hello, Francesco
-    ```
+      ```
+      Hello, Claudio
+      Hello, Francesco
+      ```
 
     Esiste inoltre la variante con un intervallo __&lt;c:forEach var="i" begin="1" end="10" step="1"&gt;__.
 
@@ -237,21 +237,21 @@ Le Java Standard Tag Libraries si dividono, principalmente in cinque pacchetti:
 
     E' possibile inoltre specificare un indice da cui partire e uno a cui fermarsi tramite i parametri `begin` e `end`.
 
-    ```jsp
-    <c:forTokens items="a,b,c,d,e,f" delims="," var="letter">
-        <p><c:cout value="${letter}" /></p>
-    </c:forTokens>
-    ```
+      ```jsp
+      <c:forTokens items="a,b,c,d,e,f" delims="," var="letter">
+          <p><c:cout value="${letter}" /></p>
+      </c:forTokens>
+      ```
 
     Il risultato dell'esempio sarà
-    ```
-    a
-    b
-    c
-    d
-    e
-    f
-    ```
+      ```
+      a
+      b
+      c
+      d
+      e
+      f
+      ```
 
 
  2. ##### XML library
