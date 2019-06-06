@@ -19,7 +19,7 @@ La servlet così generata rimane "in vita" fino allo spegnimento del web server 
   %>
   <% -- pagina -- %>
   ```
- 
+
  * ### JSP finalization
   Momento in cui vengono rilasciate tutte le risorse utilizzate dalla pagina JSP; fatto implementando il metodo `jspDestroy()` dell'interfaccia `JspPage`.
 
@@ -54,14 +54,14 @@ La servlet così generata rimane "in vita" fino allo spegnimento del web server 
       <%@ taglib uri="<libURI>" prefix="p" %>
       ```
       Il secondo esempio mostrato è un include che viene risolto a compile time, quindi permette di includere solo risorse statiche.
- 
+
   4. ##### Espressioni
       Tag usato per inserire all'interno della pagina la valutazione ( in forma di stringa ) di un codice Java.
       ```jsp
       Ciao, <%= getNome() %>
       ```
       Facendo riferimento a quanto mostrato nell'esempio delle dichiarazioni JSP, questo esempio produrrà come output `Ciao, Claudio`.
-  
+
   5. ##### Scriptlet
       Tag usato per incorporare nella pagina del codice Java puro; molto veloce per i programmatori ma da evitare assolutamente in quanto è poco comprensibili a coloro che non hanno famigliarità con la tecnologia JSP o con Java in generale. Viene mostrato solo perchè esiste.
 
@@ -73,7 +73,7 @@ La servlet così generata rimane "in vita" fino allo spegnimento del web server 
         out.println("<b>Ciao, " + nome + "</b>");
       %>
       ```
-  
+
   6. ##### Azioni
       Tag usato per dare direttive a runtime al JSP container.
       ```jsp
@@ -81,7 +81,7 @@ La servlet così generata rimane "in vita" fino allo spegnimento del web server 
       <jsp:forward page="continue.jsp" />
       ```
       Il primo esempio è un include fatto a runtime, mentre il secondo esempio è un redirect alla pagina `continue.jsp` mantenendo gli stessi oggetti rappresentanti la richiesta e la risposta.
-  
+
  * ### Oggetti impliciti
   Ogni pagina JSP dichiara automaticamente degli oggetti, essendo di fatto poi eseguita come una normale servlet. Gli oggetti dichiarati da ogni pagina JSP sono:
   * ##### request
@@ -104,7 +104,7 @@ La servlet così generata rimane "in vita" fino allo spegnimento del web server 
 
   * ##### page
       Oggetto istanza della servlet Java che sta processando la pagina ( è un sinonimo di `this`).
-  
+
   * ##### pageContext
       Oggetto che contiene i metodi per accedere ad alcuni dati specifici della pagina.
 
@@ -133,7 +133,7 @@ JSTL è un acronimo che sta per Java Standard Tag Library e, come suggerisce il 
 JSTL viene usato come sistema di **templating**, ovvero al testo della pagina vengono mescolati dei segnaposto, elementi speciali che verranno poi sostituiti con i dati effettivi.
 
 Oltre a questo contiene anche un framework per la creazione di tag JSP personalizzati.
- 
+
  * ### Custom tag framework
   Questo framework permette di creare dei tag personalizzati per eseguire nuove azioni quando richiamati all'interno di pagine JSP.
 
@@ -141,7 +141,7 @@ Oltre a questo contiene anche un framework per la creazione di tag JSP personali
       E' il "pacchetto" che rappresenta la libreria; una libreria, di solito, contiene molti tag che possono essere usati individualmente o avere dipendenze particolari tra loro. Di solito viene distribuita come archivio JAR.
   2. ##### Tag-library descriptor
       E' un file con estensione __.tld__ e con sintassi XML; contiene la sintassi del tag e le informazioni necessario al web container per gestire tali tag.
-  
+
   3. ##### Tag handler
       Una classe Java contenente la logica necessaria all'esecuzione di un particolare tag. Tale classe deve implementare una specifica interfaccia Java per essere riconosciuta valida e gestita correttamente dal web container.
 
@@ -275,3 +275,54 @@ Le Java Standard Tag Libraries si dividono, principalmente in cinque pacchetti:
     ```jsp
     <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
     ```
+## Pattern MVC
+Un pattern è un metodo di organizzazione del lavoro sviluppato per risolvere specifici problemi e favorire la migliore organizzazione, manutenzione e riutilizzabilità del codice.
+
+Il pattern MVC ( Model-View-Controller ) è un pattern sviluppato per la creazione di applicazioni che si devono interfacciare con gli utenti. Tale pattern definisce tre livelli architetturali:
+  1. Model  
+  E' il livello che si occupa della gestione dei dati, ovvero della persistenza; è suo compito infatti recuperare dati ( da un eventuale databse da esempio ), salvare le modifiche e garantirne la consistenza e correttezza.
+
+  2. View  
+  E' il livello che si occupa della presentazione dei dati all'utente e con cui quest'ultimo interagisce.
+
+  3. Controller  
+  E' il livello che si occupa di implementare la logica dell'applicazione; in parole povere è il livello che si occupa di elaborare i dati dal livello Model e di fornirli al livello View perchè siano mostrati agli utenti.
+
+## JavaBeans
+Una classe JavaBean è una classe Java il cui unico scopo è quello di modellare le informazioni che vengono scambiate tra il livello View e il livello Control: è semplicemente un contenitore per i dati in transito.
+
+Deve avere:
+  1. Un costruttore di default, senza argomenti
+  2. Solo campi `private` o `protected`
+  3. Metodi getter e setter per ogni campo
+
+Per utilizzare un Bean in una pagina è necessario includerlo.  
+```jsp
+<jsp:useBean id="var" class="pathToClass" />
+```
+
+Questa azione creerà una variabile chiamata `var` che sarà un'istanza della classe specificata. E' possibile modificare le proprietà di tale variabile con la seguente azione:
+
+```jsp
+<jsp:setProperty name="var" property="proprieta" value="valore" />
+```
+
+Questa azione assegna alla variabile di istanza `proprieta` del bean referenziato da `var` il valore `valore`.
+
+E' possibile anche inizializzare un bean a partire da dei parametri ricevuti in **request**, come ad esempio da un form. Per fare questo è possibile usare una delle seguenti sintassi:
+  1. `<jsp:setProperty name='var' property='proprieta' param='p' />`  
+    Questa azione setterà il valore di `var.proprieta` al valore contenuto nel parametri `p` presente in **request**
+
+  2. `<jsp:setProperty name='var' property='proprieta' />`  
+    Questa azione setterà il valore di `var.proprieta` al valore contenuto nel parametro `proprieta`presente in **request**; se tale parametro non esiste questa azione non avrà alcun effetto.
+
+  3. `<jsp:setProperty name='var' property='*' />`  
+    Questa azione tenterà di eseguire il comportamento di quella precedentemente mostrata per ogni proprietà del bean referenziato da `var`.
+
+
+E' possibile recuperare il valore di una proprietà con la seguente azione:
+
+```jsp
+<jsp:getProperty name="var" property="proprieta" />
+```
+Questa azione ritorna il valore della variabile di istanza `proprieta` del bean referenziato dalla variabile `var`.
