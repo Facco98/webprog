@@ -272,31 +272,31 @@ Le Java Standard Tag Libraries si dividono, principalmente in cinque pacchetti:
     *  __&lt;fmt:message key="your.key" /&gt;__  
       Questo tag è utilizzato per l'internazionalizzazione delle applicazioni usando un **ResourceBundle**, restituendo il valore corrispondente alla chiave passata.  
       Un ResourceBundle è una classe Java che gestisce un file di testo contenente oggetti specifici per la zona, come ad esempio i messaggi tradotti in una specifica lingua. Questa classe carica i file di testo con estensione __.properties__, contenenti delle coppie chiave-valore come segue; nel caso si voglia inserire dei separatori ( come spazi o tab ) bisogna farne l'escape.
-      ```
-      saluto=Ciao
-      benvenuto=Benvenuto
-      frutta\ e\ verdura=Frutta e verdura.
-      ```
-      Il nome del file è così composto: `<nome>_xx.properties`, dove `<nome>` può assumere qualsiasi valore noi vogliamo, mentre `xx`deve essere l'identificativo di una lingua secondo lo standard ISO 639.  
-      Esempi:
-        * messages_it.properties
-        * messages_en.properties
+        ```
+        saluto=Ciao
+        benvenuto=Benvenuto
+        frutta\ e\ verdura=Frutta e verdura.
+        ```
+        Il nome del file è così composto: `<nome>_xx.properties`, dove `<nome>` può assumere qualsiasi valore noi vogliamo, mentre `xx`deve essere l'identificativo di una lingua secondo lo standard ISO 639.  
+        Esempi:
+          * messages_it.properties
+          * messages_en.properties
 
-      Per usare questo in un'applicazione Web creata tramite servelt e derivate bisogna specificare il ResourceBundle che si vuole utilizzare nel file `web.xml`.
+        Per usare questo in un'applicazione Web creata tramite servelt e derivate bisogna specificare il ResourceBundle che si vuole utilizzare nel file `web.xml`.
 
-      ```xml
-      <context-param>
-        <param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
-        <param-value> <!-- Inserire il percorso ( package ) COMPLETO del resource bundle --> </param-value>
-      </context-param>
-      ```
+        ```xml
+        <context-param>
+          <param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
+          <param-value> <!-- Inserire il percorso ( package ) COMPLETO del resource bundle --> </param-value>
+        </context-param>
+        ```
 
-      In alternativa si può impostare il ResourceBundle da usare in ogni pagina JSP
+        In alternativa si può impostare il ResourceBundle da usare in ogni pagina JSP
 
-      ```jsp
-      <fmt:setBundle baseName="path" />
-      ```
-      sostituendo al posto di `<path>` il percorso ( come package ) completo del resource bundle che si vuole usare.
+        ```jsp
+        <fmt:setBundle baseName="path" />
+        ```
+        sostituendo al posto di `<path>` il percorso ( come package ) completo del resource bundle che si vuole usare.
 
  4. ##### SQL library
     Contiene i tag utili per l'interazione con database relazionali basati su SQL.
