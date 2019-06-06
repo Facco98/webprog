@@ -164,16 +164,17 @@ Le Java Standard Tag Libraries si dividono, principalmente in cinque pacchetti:
     ```jsp
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     ```
-
+    
     ###### Tag principali
-  * __<c:out value="val" />__  
+    
+    * __&lt;c:out value="val" /&gt;__  
     Viene sostituito con il valore dell'espressione contenuta nel parametro __val__.
 
     ```jsp
     <%! String nome = "Claudio" %>
     <p>Ciao, <c:out value="${nome}" /></p>
     ```
-  * __<c:set value="val" var="v" scope="page"/>__  
+    * __&lt;c:set value="val" var="v" scope="page"/&gt;__  
     Non produce output; ha l'effetto di creare una variabile chiamata **v** con valore __val__ con scoping __page__.
 
     ```jsp
@@ -181,8 +182,8 @@ Le Java Standard Tag Libraries si dividono, principalmente in cinque pacchetti:
     <p>Ciao, <c:out value="${nome}" /></p>
     ```
 
-  * __<c:if test="${a == b}">__  
-    Il contenuto tra il tag **<c:if>** il corrispettivo tag di chiusura **</c:if>** viene valutato ( e eventualmente mostrato ) solo se il test ha avuto esito positivo.
+    * __&lt;c:if test="${a == b}"&gt;__  
+    Il contenuto tra il tag **&lt;c:if&gt;** il corrispettivo tag di chiusura **&lt;/c:if&gt;** viene valutato ( e eventualmente mostrato ) solo se il test ha avuto esito positivo.
     E' possibile passare un altro argomento chiamato **var**; nel caso presente l'esito del confronto viene salvato in una variabile chiamata come il valore del parametro var e con scoping corrispondente a quello specificato con il parametro **scope**.
 
     ```jsp
@@ -198,10 +199,10 @@ Le Java Standard Tag Libraries si dividono, principalmente in cinque pacchetti:
     Nel caso mostrato il paragrafo che saluta non viene mostrato, in quanto ${a==b} viene valutato a false.  
     Viene inoltre mostrato `Esito: false` alla fine della pagina.
 
-  * __<c:choose>__  
+    * __&lt;c:choose&gt;__  
     E' un tag che identifica un blocco in cui ci sono condizioni mutualmente esclusive identificate dai tag
-      1. **<c:when test="${a==b}">**, mostrato solo se il test ha esito positivo.
-      2. **<c:otherwhise>**, mostrato solo se nessuna delle altre clausole ha avuto successo.
+      1. **&lt;c:when test="${a==b}">**, mostrato solo se il test ha esito positivo.
+      2. **&lt;c:otherwhise&gt;**, mostrato solo se nessuna delle altre clausole ha avuto successo.
 
 
     ```jsp
@@ -214,7 +215,7 @@ Le Java Standard Tag Libraries si dividono, principalmente in cinque pacchetti:
     ```
     In questo caso l'output sarà `a!=b`, in quanto il primo test fallirà.
 
-  * __<c:forEach var="i" items="collection">__  
+    * __&lt;c:forEach var="i" items="collection"&gt;__  
     Consente di eseguire il contenuto dei tag per ogni elemento contenuto nella variabile `collecion`, accedendo ogni volta all'elemento corrente tramite la vriabile `i`.
 
     ```jsp
@@ -229,9 +230,9 @@ Le Java Standard Tag Libraries si dividono, principalmente in cinque pacchetti:
     Hello, Francesco
     ```
 
-    Esiste inoltre la variante con un intervallo __<c:forEach var="i" begin="1" end="10" step="1">__.
+    Esiste inoltre la variante con un intervallo __&lt;c:forEach var="i" begin="1" end="10" step="1"&gt;__.
 
-  * __<c:forTokens items="${string}" delims="${del}" var="i">__  
+    * __&lt;c:forTokens items="${string}" delims="${del}" var="i"&gt;__  
     Consente di dividere la stringa `string` ogni volta che si incontra la stringa `del`, salvare questa sottostringa nella variabile `i` e eseguire ciò che è contenuto tra i tag di apertura e chiusura.
 
     E' possibile inoltre specificare un indice da cui partire e uno a cui fermarsi tramite i parametri `begin` e `end`.
