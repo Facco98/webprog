@@ -641,4 +641,6 @@ result = {} + "Ciao" // result = NaN
 result = "Ciao" + {} // result = Ciao[object Object]
 ```
 
-( WAT a language )
+#### [WAT a language](https://www.destroyallsoftware.com/talks/wat)
+Si parla di JS circa al minuto 1:20, mostra alcuni assurdi dell'operatore `+` con ironia.
+
