@@ -28,6 +28,3 @@ svn export https://github.com/Facco98/webprog/trunk/{nome_esercitazione}
 ```
 
 dove nome_esercitazione è il nome della cartella che contiene l'esercitazione a cui si è interessati; nel caso della prima esercitazione sarà lab1-git.
-
-### Appunti per il secondo parziale
-A [questo indirizzo](https://Facco98.github.io/webprog/SecondaProvetta) trovate gli appunti scritti in preparazione al secondo parziale del corso, da JSP in poi.
